@@ -11,3 +11,7 @@
 
 # ¿Quieres hacer otra consulta? (sí/no): no
 # Gracias por usar el programa. ¡Hasta luego!
+
+
+
+if __name__ == "__main__":

@@ -8,6 +8,7 @@
 # •	Multiplicar_fracciones: Función que recibe dos fracciones y calcula el producto, para ello numerador=n1*n2 y denominador=d1*d2. Se debe simplificar la fracción resultado.
 # •	Dividir_fracciones: Función que recibe dos fracciones y calcula el cociente, para ello numerador=n1*d2 y denominador=d1*n2. Se debe simplificar la fracción resultado.
 # •	Usar la librería fractions de Python
+
 # Crear un programa que utilizando las funciones anteriores muestre el siguiente menú:
 # 1.	Sumar dos fracciones: En esta opción se piden dos fracciones y se muestra el resultado.
 # 2.	Restar dos fracciones: En esta opción se piden dos fracciones y se muestra la resta.
@@ -31,3 +32,86 @@
 # Introduce el denominador de la segunda fracción: 3
 # El resultado de la suma es: 5/6
 
+
+
+from fractions import Fraction
+
+
+def leer_fracción():
+    numerador = int(input("Indica numerador "))
+    denominador = int(input("Indica denominador "))
+    if numerador == 0:
+        print("Numerador no puede ser 0")
+        numerador = int(input("Indica numerador de nuevo "))
+    if numerador == 0 and denominador == 0:
+        print("0/0, no es posible")
+        numerador = int(input("Indica numerador "))
+        denominador = int(input("Indica denominador "))
+    if denominador == 0:
+        print("Numerador no puede ser 0")
+        denominador = int(input("Indica denominador de nuevo "))
+    return Fraction(numerador, denominador)
+
+
+def escribir_fracción(fraccion):
+    if fraccion.denominator==1:
+        print(fraccion.numerator)
+    else:
+        print(fraccion.numerator/fraccion.denominator)
+
+
+def simplificar_fracción(fraccion):
+    return Fraction(fraccion.numerator,fraccion.denominator)
+
+
+def sumar_fracciones(fraccion1, fraccion2):
+    return fraccion1+fraccion2
+
+
+def restar_fracciones(fraccion1, fraccion2):
+    return fraccion1-fraccion2
+
+
+def multiplicar_fracciones(fraccion1, fraccion2):
+    return fraccion1*fraccion2
+
+
+def dividir_fracciones(fraccion1, fraccion2):
+    return fraccion1/fraccion2
+
+
+
+
+
+if __name__ == "__main__":
+    while True:
+        print("Menu:")
+        print("1. Sumar dos fracciones")
+        print("2. Restar dos fracciones")
+        print("3. Multiplicar dos fracciones")
+        print("4. Dividir dos fracciones")
+        print("5. Salir")
+        opcion = input("Seleccione una opción: ")
+        
+        if opcion == "5":
+            break
+        elif opcion in ("1","2","3","4"):
+            print("Primera fracción")
+            fraccion1 = leer_fracción()
+            print("Segunda fracción")
+            fraccion2 = leer_fracción()
+            
+            if opcion == "1":
+                print("Suma --> ")
+                escribir_fracción(sumar_fracciones(fraccion1, fraccion2)) 
+            elif opcion == "2":
+                print("Resta --> ")
+                escribir_fracción(restar_fracciones(fraccion1, fraccion2))
+            elif opcion == "3":
+                print("Multiplicación --> ")
+                escribir_fracción(multiplicar_fracciones(fraccion1, fraccion2))
+            elif opcion == "4":
+                print("Division --> ")
+                escribir_fracción(dividir_fracciones(fraccion1, fraccion2))
+        else: 
+            print("Opción NO correcta, prueba otras")

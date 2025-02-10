@@ -30,15 +30,15 @@ def calcularPrecio(fruta, cantidad):
         total = precioFrutas[fruta] * cantidad
         print("El precio total de " ,cantidad ," kg de ",fruta ," es: " ,total, " €" )
     else:
-        print("Error: La fruta pera no está disponible en el diccionario")
+        print("Error: La fruta no está disponible en el diccionario")
 
 
 #Método main para sus respectivos métodos, donde se piden que el usuario introduzca lo pedido en las cuestiones
 if __name__ == "__main__":
     while True:
-        fruta = input("Nombre de una fruta --> ")
+        fruta = input("Nombre de una fruta -->")
         try:
-            cantidad = float(input("Cantidad vendida en kg --> "))
+            cantidad = float(input("Cantidad vendida en kg -->"))
             calcularPrecio(fruta, cantidad)
         except ValueError:
             print("Error, cantidad errónea")

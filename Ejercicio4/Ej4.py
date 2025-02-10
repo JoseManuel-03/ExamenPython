@@ -56,13 +56,13 @@ agenda = {}
 
 #Método para añadir o modificar, que pide algunas cuestiones al usuario, si ya existe se podrá modificar, sino añadir
 def añadirModificar():
-    nombre = input("Dime el nombre: ")
+    nombre = input("Dime el nombre -->")
     if nombre in agenda:
         print("Teléfono actual de ", nombre, "es", agenda[nombre])
         modificar = input("¿Quieres modificarlo? (sí/no): ").lower()
         if modificar == "sí":
             while True:
-                telefono = input("Dime el numero nuevo de teléfono: ")
+                telefono = input("Dime el numero nuevo de teléfono -->")
                 if telefono.isdigit():
                     agenda[nombre] = telefono
                     print("Teléfono de ", nombre, "actualizado")
@@ -71,7 +71,7 @@ def añadirModificar():
                     print("Error, el teléfono debe ser solo numeros")
     else:
         while True:
-            telefono = input("Dime el numero nuevo de teléfono: ")
+            telefono = input("Dime el numero nuevo de teléfono -->")
             if telefono.isdigit():
                 agenda[nombre] = telefono
                 print("Teléfono de ", nombre, "actualizado")
@@ -82,7 +82,7 @@ def añadirModificar():
 
 #Método para buscar,que pide algunas cuestiones al usuario, y comprueba su existencia
 def buscar():
-    texto = input("Dime nombre o parte de nombre para buscarlo: ").lower()
+    texto = input("Dime nombre o parte de nombre para buscarlo -->").lower()
     resultados = {}
     for nombre, telefono in agenda.items():
         if nombre.lower().startswith(texto):
@@ -96,7 +96,7 @@ def buscar():
 
 #Método para borrar,que pide algunas cuestiones al usuario, y comprueba su existencia
 def borrar():
-    nombre = input("Dime el nombre a borrar: ")
+    nombre = input("Dime el nombre a borrar -->")
     if nombre in agenda:
         confirmar = input("¿Seguro de que le quieres borrar3? (sí/no)" ).lower()
         if confirmar == "sí":
@@ -125,7 +125,7 @@ if __name__ == "__main__":
         print("4. Listar")
         print("5. Salir")
         
-        opcion = input("Seleccione una opción (1-5): ")
+        opcion = input("Seleccione una opción (1-5) -->")
         if opcion == "1":
             añadirModificar()
         elif opcion == "2":

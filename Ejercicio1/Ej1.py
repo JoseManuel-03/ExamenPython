@@ -39,18 +39,18 @@ from fractions import Fraction
 
 #Método para leer una fracción que pide un numerador y denominador, comprabando su validez
 def leer_fracción():
-    numerador = int(input("Dime numerador "))
-    denominador = int(input("Dime denominador "))
+    numerador = int(input("Dime numerador -->"))
+    denominador = int(input("Dime denominador -->"))
     if numerador == 0:
         print("Numerador no puede ser 0")
-        numerador = int(input("Dime numerador de nuevo "))
+        numerador = int(input("Dime numerador de nuevo -->"))
     if numerador == 0 and denominador == 0:
         print("0/0, no es posible")
-        numerador = int(input("Dime numerador "))
-        denominador = int(input("Dime denominador "))
+        numerador = int(input("Dime numerador -->"))
+        denominador = int(input("Dime denominador -->"))
     if denominador == 0:
         print("Numerador no puede ser 0")
-        denominador = int(input("Dime denominador de nuevo "))
+        denominador = int(input("Dime denominador de nuevo -->"))
     return Fraction(numerador, denominador)
 
 
@@ -96,9 +96,10 @@ if __name__ == "__main__":
         print("3. Multiplicar dos fracciones")
         print("4. Dividir dos fracciones")
         print("5. Salir")
-        opcion = input("Seleccione una opción: ")
+        opcion = input("Seleccione una opción  (1-5) -->")
         
         if opcion == "5":
+            print("Gracias por usar el programa. ¡Hasta luego!")
             break
         elif opcion in ("1","2","3","4"):
             print("Primera fracción")
@@ -107,16 +108,16 @@ if __name__ == "__main__":
             fraccion2 = leer_fracción()
             
             if opcion == "1":
-                print("Suma --> ")
+                print("Suma -->")
                 escribir_fracción(sumar_fracciones(fraccion1, fraccion2)) 
             elif opcion == "2":
-                print("Resta --> ")
+                print("Resta -->")
                 escribir_fracción(restar_fracciones(fraccion1, fraccion2))
             elif opcion == "3":
-                print("Multiplicación --> ")
+                print("Multiplicación -->")
                 escribir_fracción(multiplicar_fracciones(fraccion1, fraccion2))
             elif opcion == "4":
-                print("Division --> ")
+                print("Division -->")
                 escribir_fracción(dividir_fracciones(fraccion1, fraccion2))
         else: 
             print("Opción NO correcta, prueba otras")

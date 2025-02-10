@@ -12,5 +12,5 @@ def convertirEspaciado(frase):
 
 #Método main para sus respectivos métodos, donde se piden que el usuario introduzca lo pedido en las cuestiones
 if __name__ == "__main__":
-    texto = input("Dime una frase --> ")
+    texto = input("Dime una frase -->")
     print("Frase: ", convertirEspaciado(texto))

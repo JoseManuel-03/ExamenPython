@@ -28,16 +28,16 @@ def binarioDecimal(binario):
 #Método main para hacer el menú de opciones,con sus respectivos métodos, donde se piden que el usuario introduzca lo pedido en las cuestiones
 if __name__ == "__main__":
     while True:
-        print("Seleccione una opción:")
+        print("Seleccione una opción (1-3) -->")
         print("1. Pasar de decimal a binario")
         print("2. Pasar de binario a decimal")
         print("3. Salir")
         
-        opcion = input("Dime el numero de opción (1,2 o 3): ")
+        opcion = input("Dime el numero de opción (1,2 o 3) -->")
         
         if opcion == "1":
             try:
-                numeroDecimal = int(input("Dime un número decimal: "))
+                numeroDecimal = int(input("Dime un número decimal -->"))
                 numeroBinario = decimalBinario(numeroDecimal)
                 print("El número", numeroDecimal, "en binario es: ", numeroBinario)
             except ValueError:

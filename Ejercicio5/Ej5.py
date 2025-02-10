@@ -149,7 +149,7 @@ if __name__ == "__main__":
         print("8. Mostrar números")
         print("9. Salir")
         
-        opcion = input("Seleccione una opción (1-9): ")
+        opcion = input("Seleccione una opción (1-9) -->")
         
         if opcion == "1":
             añadirNumero()

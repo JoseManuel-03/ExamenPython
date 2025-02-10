@@ -7,13 +7,13 @@
 #Método para calcular la nota final de un alumno
 def calcularNotaFinal():
     
-    examen1=float(input("Dime la calificacion del primer examen parcial --> "))
-    examen2=float(input("Dime la calificacion del segundo examen parcial--> "))
-    examen3=float(input("Dime la calificacion del tercer examen parcial--> "))
+    examen1=float(input("Dime la calificacion del primer examen parcial -->"))
+    examen2=float(input("Dime la calificacion del segundo examen parcial-->"))
+    examen3=float(input("Dime la calificacion del tercer examen parcial-->"))
     
-    examenFinal=float(input("Dime la calificacion del examen final--> "))
+    examenFinal=float(input("Dime la calificacion del examen final -->"))
     
-    trabajoFinal=float(input("Dime la calificacion del trabajo final--> "))
+    trabajoFinal=float(input("Dime la calificacion del trabajo final -->"))
     
     promedioParciales = (examen1 + examen2 + examen3)/3
     

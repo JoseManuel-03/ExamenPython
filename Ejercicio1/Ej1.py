@@ -16,7 +16,6 @@
 # 4.	Dividir dos fracciones: En esta opción se piden dos fracciones y se muestra el cociente.
 # 5.	Salir
 
-
 # SALIDA DATOS POR PANTALLA:
 
 # Menú:
@@ -34,25 +33,28 @@
 
 
 
+#Importamos para trabajar con fracciones
 from fractions import Fraction
 
 
+#Método para leer una fracción que pide un numerador y denominador, comprabando su validez
 def leer_fracción():
-    numerador = int(input("Indica numerador "))
-    denominador = int(input("Indica denominador "))
+    numerador = int(input("Dime numerador "))
+    denominador = int(input("Dime denominador "))
     if numerador == 0:
         print("Numerador no puede ser 0")
-        numerador = int(input("Indica numerador de nuevo "))
+        numerador = int(input("Dime numerador de nuevo "))
     if numerador == 0 and denominador == 0:
         print("0/0, no es posible")
-        numerador = int(input("Indica numerador "))
-        denominador = int(input("Indica denominador "))
+        numerador = int(input("Dime numerador "))
+        denominador = int(input("Dime denominador "))
     if denominador == 0:
         print("Numerador no puede ser 0")
-        denominador = int(input("Indica denominador de nuevo "))
+        denominador = int(input("Dime denominador de nuevo "))
     return Fraction(numerador, denominador)
 
 
+#Método para escribir una fracción que representa cómo se escribe correctamente
 def escribir_fracción(fraccion):
     if fraccion.denominator==1:
         print(fraccion.numerator)
@@ -60,29 +62,32 @@ def escribir_fracción(fraccion):
         print(fraccion.numerator/fraccion.denominator)
 
 
+#Método para simplificar fraccion utilizando Fraction
 def simplificar_fracción(fraccion):
     return Fraction(fraccion.numerator,fraccion.denominator)
 
 
+#Método para sumar fracciones(con el operador +)
 def sumar_fracciones(fraccion1, fraccion2):
     return fraccion1+fraccion2
 
 
+#Método para restar fracciones(con el operador -)
 def restar_fracciones(fraccion1, fraccion2):
     return fraccion1-fraccion2
 
 
+#Método para multiplicar fracciones(con el operador *)
 def multiplicar_fracciones(fraccion1, fraccion2):
     return fraccion1*fraccion2
 
 
+#Método para dividir fracciones(con el operador /)
 def dividir_fracciones(fraccion1, fraccion2):
     return fraccion1/fraccion2
 
 
-
-
-
+#Método main para hacer el menú de opciones, sus respectivos métodos
 if __name__ == "__main__":
     while True:
         print("Menu:")

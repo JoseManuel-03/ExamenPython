@@ -14,3 +14,51 @@
 # Introduce tu intento (un número de 4 cifras sin repetir): 2607
 # Resultado: 4 MUERTOS, 0 HERIDOS
 # ¡Felicidades! Has adivinado el código 2607 en 3 intentos.
+
+
+#Importamos para trabajar con random
+import random
+
+
+#Método para jugar al juego del mastermind, donde se intenta adivinar gracias a las cuestiones lanzadas al usuario, la posición de los números
+def juegoMastermind():
+    print("¡Bienvenido al juego Mastermind!")
+    print("Tienes que adivinar un número de 4 cifras sin cifras repetidas")
+    
+    numeros = list(range(10))
+    codigo = ""
+    intentos = 0
+    adivinado = False
+    
+    for n in range(4):
+        indice = random.randint(0, len(numeros) - 1)
+        codigo += str(numeros.pop(indice))
+    
+    while not adivinado:
+        intento = input("Dime un numero de 4 cifras sin repetir -->")
+        
+        if intento.isdigit() and len(intento) == 4:
+            if len(set(intento)) == 4:
+                intentos += 1
+                muertos = 0
+                for n in range(4):
+                    if intento[n] == codigo[n]:
+                        muertos += 1
+                heridos = 0
+                for n in range(4):
+                    if intento[n] in codigo and intento[n] != codigo[n]:
+                        heridos += 1
+                
+                print("Resultado: ",muertos, " MUERTOS, ", heridos, " HERIDOS")
+                
+                if muertos == 4:
+                    print("¡Felicidades! Has adivinado el código ", codigo ,"en ",intentos ,"intentos.")    
+                    
+                    adivinado = True
+        else:
+            print("Error, debes decirme 4 cifras sin repetir")
+
+
+#Método main para sus respectivos métodos
+if __name__ == "__main__":
+    juegoMastermind()

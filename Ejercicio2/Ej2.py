@@ -5,10 +5,12 @@
 # La cadena con espacios entre los caracteres: H o l a ,   t ú
 
 
+#Método para poner un espacio entre letras
 def convertirEspaciado(frase):
-    return "".join(texto)
+    return " ".join(texto)
 
 
+#Método main para sus respectivos métodos, donde se piden que el usuario introduzca lo pedido en las cuestiones
 if __name__ == "__main__":
-    texto = input("Introduce frase ")
+    texto = input("Dime una frase --> ")
     print("Frase: ", convertirEspaciado(texto))
